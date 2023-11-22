@@ -1,8 +1,10 @@
-Hello {{title}}
+Hello {{ title }}
 
-<button type="button" [style]="myButtonbgColor" [disabled]="isDisabled">{{myBtn}}</button>
+<button type="button" [style]="myButtonbgColor" [disabled]="isDisabled">
+  {{ myBtn }}
+</button>
 
-<img src="angularImage" alt="Angular">
+<img src="angularImage" alt="Angular" />
 
 <div [style.backgroundColor]="bgColor">
   <h2 [style.color]="titleColor">Title</h2>
@@ -11,32 +13,30 @@ Hello {{title}}
 
 <h2 [class.textColor]="redText">Title</h2>
 
-
 <button (click)="incrementCounter()">Increment</button>
-<p>Counter: {{counter}}</p>
+<button (click)="decrementCounter()">Decrement</button>
+<p>Counter: {{ counter }}</p>
 
-<input [(ngModel)]="inputText" placeholder="Enter text">
-<p>You entered : {{inputText}}</p>
+<input [(ngModel)]="inputText" placeholder="Enter text" />
+<p>You entered : {{ inputText }}</p>
 
 <div [ngClass]="classes">
-  {{message}}
+  {{ message }}
 </div>
 
-<div class="color-box" [ngStyle]="{'backgroundColor':selectedColor}">
-
-<!----------------------------------------------------------------------------------------------------------------->
-  
+<div class="color-box" [ngStyle]="{ backgroundColor: selectedColor }">
+  <!----------------------------------------------------------------------------------------------------------------->
 </div>
 
-<div *ngIf="isLoggedIn">Welcome, {{username}}</div>
+<div *ngIf="isLoggedIn">Welcome, {{ username }}</div>
 <div *ngIf="!isLoggedIn">Please login to view the content</div>
 <div *ngIf="isLoggedIn && true">Login content</div>
-<div *ngIf="isLoggedIn; else loggedOut">Welcome back, {{username}}</div>
+<div *ngIf="isLoggedIn; else loggedOut">Welcome back, {{ username }}</div>
 
 <ng-template #loggedOut>Please login</ng-template>
 
 <ul>
-  <li *ngFor="let name of names ; let i=index">{{i}} {{name}}</li>
+  <li *ngFor="let name of names; let i = index">{{ i }} {{ name }}</li>
 </ul>
 
 <div [ngSwitch]="grade">
@@ -45,29 +45,28 @@ Hello {{title}}
   <p *ngSwitchDefault>Unknow</p>
 </div>
 
-
 <!----------------------------------------------------------------------------------------------------------------->
-
 
 <div>
-<p>Today is {{today | date}}</p>
-<p>Today is {{today | date:'fullDate'}}</p>
-<p>Today is {{today | date:'hh:mm:ss'}}</p>
+  <p>Today is {{ today | date }}</p>
+  <p>Today is {{ today | date : "fullDate" }}</p>
+  <p>Today is {{ today | date : "hh:mm:ss" }}</p>
 </div>
 
-<p>{{currency | currency}}</p>
-<p>{{currency | currency: "EUR": "symbol": "1.1-3"}}</p>
-<p>{{currency | percent}}</p>
+<p>{{ currency | currency }}</p>
+<p>{{ currency | currency : "EUR" : "symbol" : "1.1-3" }}</p>
+<p>{{ currency | percent }}</p>
 
-<h1>{{title | append: "Custom"}}</h1>
+<h1>{{ title | append : "Custom" }}</h1>
 
 <!----------------------------------------------------------------------------------------------------------------->
 
-{{messages}}
+{{ messages }}
 <h1>Post</h1>
 <div *ngFor="let post of posts">
-  <h2>{{post.id}}</h2>
-  <h3>{{post.title}}</h3>
-  <p>{{post.body}}</p>
+  <h2>{{ post.id }}</h2>
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+  <p>{{ post.userId }}</p>
   <hr />
 </div>
